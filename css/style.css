@@ -1,0 +1,34 @@
+/* Adicione este CSS ao seu arquivo ou dentro de uma tag <style> */
+.parallax {
+    /* A imagem de fundo será movida na direção oposta ao rolar */
+    background-image: url('../src/bg.png');
+    background-attachment: fixed;
+    /* Fixa a imagem no fundo */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    /* Evita repetição da imagem */
+    background-size: cover;
+    /* Faz a imagem cobrir o contêiner */
+}
+
+/* Camada escura sobre a imagem de fundo */
+.relative .absolute.inset-0.bg-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(161, 20, 255, 0.5);
+    /* Ajuste a opacidade conforme necessário */
+    z-index: 1;
+}
+
+/* Filtro escuro na imagem */
+.bg-center {
+    filter: brightness(70%);
+    /* Ajuste o valor para escurecer mais ou menos a imagem */
+}
+.filter-darken{
+    filter: brightness(100%);
+}
