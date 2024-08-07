@@ -1,13 +1,88 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <nav class="bg-black">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <!-- Texto no canto superior esquerdo -->
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                    <span class="text-white text-2xl font-bold">Sávio Bortoline</span>
+                </div>
+    
+                <!-- Botão de menu para dispositivos móveis -->
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <button type="button"
+                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-0"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+    
+                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+    
+                <!-- Itens do menu -->
+                <div class="flex flex-1 items-center justify-end sm:items-stretch sm:justify-end">
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-6"> <!-- Aumentado o espaço entre os itens -->
+                            <a href="#"
+                                class="px-4 py-2 text-md font-medium text-white border-b-2 border-transparent hover:border-green-500 hover:text-green-500"
+                                aria-current="page">HOME</a>
+                            <a href="#"
+                                class="px-4 py-2 text-md font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">ABOUT</a>
+                            <a href="#"
+                                class="px-4 py-2 text-md font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">PROJECTS</a>
+                            <a href="#"
+                                class="px-4 py-2 text-md font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">CONTACT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="relative isolate overflow-hidden bg-black py-24 sm:py-32 flex items-center justify-center">
+        <!-- Imagem circular sobre o texto -->
+        <div class="absolute top-1/4 flex justify-center w-full">
+            <!-- Ajuste o valor para posicionar a imagem corretamente -->
+            <img src="https://avatars.githubusercontent.com/u/118234357?v=4" alt="Profile"
+                class="w-64 h-64 rounded-full border-4 border-green-500"> <!-- Imagem maior -->
+        </div>
+
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+            <div class="mx-auto max-w-2xl lg:mx-0 mt-96"> <!-- Aumente o valor para mover o texto mais para baixo -->
+                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                    Eu sou <span class="text-green-500">Sávio Bortoline</span>
+                </h2>
+                <p class="mt-6 text-lg leading-8 text-gray-100">
+                    Sou apaixonado por tecnologia e desenvolvo sites e aplicações para ajudar empresas a prosperar
+                    online. Minhas ferramentas preferidas são:
+                </p>
+                <p class="mt-6 text-lg leading-8 text-green-300">
+                    Wordpress, PHP e React Native.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
 </body>
+
 </html>
