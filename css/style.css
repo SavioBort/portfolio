@@ -13,35 +13,35 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Ajuste o último valor (0.5) para alterar a intensidade do escurecimento */
-    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo principal */
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: -1; 
 }
 .text-gradient-green-blue {
     background-clip: text;
-    -webkit-background-clip: text; /* Para compatibilidade com navegadores WebKit */
+    -webkit-background-clip: text; 
     color: transparent;
-    background-image: linear-gradient(90deg, #06f02d, #a8f199); /* Gradiente de duas cores (verde e azul) */
+    background-image: linear-gradient(90deg, #06f02d, #a8f199); 
 }
 .custom-button:hover {
-    background-image: linear-gradient(90deg, #06f02d, #a8f199); /* Gradiente alterado para o hover */
+    background-image: linear-gradient(90deg, #06f02d, #a8f199); 
 }
 .project-card {
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda fina */
-    transition: border-color 0.3s ease; /* Transição suave */
-    overflow: hidden; /* Garante que o cursor mude ao passar sobre o card */
-    position: relative; /* Necessário para pseudo-elementos */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    transition: border-color 0.3s ease; 
+    overflow: hidden; 
+    position: relative; 
 }
 
 .project-card:hover {
-    border-color: #22c55e; /* Cor da borda ao passar o mouse */
+    border-color: #22c55e;
 }
 
 .project-image {
-    transition: opacity 0.3s ease; /* Transição suave para opacidade */
+    transition: opacity 0.3s ease; 
 }
 
 .project-card:hover .project-image {
-    opacity: 0.7; /* Opacidade ao passar o mouse */
+    opacity: 0.7;
 }
 
 .project-content {
@@ -49,7 +49,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente para texto */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     transform: translateY(100%);
     transition: transform 0.3s ease;
@@ -69,4 +69,7 @@
 .project-description {
     color: #ddd;
     font-size: 1rem;
+}
+.font-custom {
+    font-family: 'Roboto', sans-serif;
 }
