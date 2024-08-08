@@ -193,6 +193,9 @@
             </div>
         </form>
 
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
     </section>
     <footer class="bg-green-900 text-center py-4" style="background-color: #121212;">
         <p class="text-sm text-white">© Sávio Bortoline 2024 - Todos os direitos reservados.</p>
