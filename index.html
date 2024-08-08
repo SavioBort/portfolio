@@ -1,11 +1,16 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <nav class="bg-gray-900 bg-opacity-50 fixed inset-x-0 z-10" style="background-color: #121212;">
 
@@ -54,11 +59,11 @@
     <div class="relative isolate overflow-hidden bg-black py-24 sm:py-32 flex items-center justify-center">
         <div class="absolute top-[20%] flex justify-center w-full">
             <img src="https://avatars.githubusercontent.com/u/118234357?v=4" alt="Profile"
-                class="w-64 h-64 rounded-full border-4 border-green-500 m-2.5"> 
+                class="w-64 h-64 rounded-full border-4 border-green-500 m-2.5">
         </div>
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-            <div class="mx-auto max-w-2xl lg:mx-0 mt-96"> 
+            <div class="mx-auto max-w-2xl lg:mx-0 mt-96">
                 <h2 class="text-4xl font-bold tracking-tight sm:text-6xl text-white">
                     Eu sou <span class="text-gradient-green-blue">Sávio Bortoline</span>
                 </h2>
@@ -123,31 +128,32 @@
             </div>
         </div>
     </section>
-    <section class="relative isolate overflow-hidden bg-black text-white py-8 flex flex-col items-center justify-center">
+    <section
+        class="relative isolate overflow-hidden bg-black text-white py-8 flex flex-col items-center justify-center">
         <h1 class="text-xl text-green-500 mb-4"><b>Contato</b></h1>
         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">
             Entre em contato
         </h2>
-        <form action="#" method="POST" class="w-full max-w-4xl">
+        <form action="https://formspree.io/f/your_form_id" method="POST" class="w-full max-w-4xl" id="contactForm">
+            <input type="hidden" name="_replyto" value="bortoline.25@gmail.com">
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
-                    <label for="nome" class="block tracking-wide text-green-500 text-sm font-bold mb-2">Nome</label>
-                    <input id="nome" type="text" placeholder="Seu nome"
+                    <label for="nome" class="block text-sm font-bold mb-2">Nome</label>
+                    <input id="nome" type="text" name="nome" placeholder="Seu nome"
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
                 </div>
             </div>
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
-                    <label for="email" class="block tracking-wide text-green-500 text-sm font-bold mb-2">E-mail</label>
-                    <input id="email" type="email" placeholder="Seu e-mail"
+                    <label for="email" class="block text-sm font-bold mb-2">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="Seu e-mail"
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
                 </div>
             </div>
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
-                    <label for="mensagem"
-                        class="block tracking-wide text-green-500 text-sm font-bold mb-2">Mensagem</label>
-                    <textarea id="mensagem" placeholder="Sua mensagem" rows="8"
+                    <label for="mensagem" class="block text-sm font-bold mb-2">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="8"
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"></textarea>
                 </div>
             </div>
@@ -162,5 +168,13 @@
     <footer class="bg-green-900 text-center py-4" style="background-color: #121212;">
         <p class="text-sm text-white">© Sávio Bortoline 2024 - Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Botão de WhatsApp -->
+    <a href="https://wa.me/seu_numero" target="_blank"
+        class="fixed right-4 bottom-4 z-50 bg-green-800 hover:bg-green-600 text-white p-4 rounded-full shadow-md transition duration-300 flex items-center justify-center"
+        style="width: 40px; height: 40px;">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </a>
 </body>
+
 </html>
