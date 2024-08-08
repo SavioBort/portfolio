@@ -85,7 +85,7 @@
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="nome" class="block text-sm font-bold mb-2">Nome</label>
-                    <input id="nome" type="text" name="nome" placeholder="Seu nome"
+                    <input id="nome" type="text" name="nome" placeholder="Seu nome" required
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
                 </div>
             </div>
@@ -93,7 +93,7 @@
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="email" class="block text-sm font-bold mb-2">E-mail</label>
-                    <input id="email" type="email" name="email" placeholder="Seu e-mail"
+                    <input id="email" type="email" name="email" placeholder="Seu e-mail" required
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
                 </div>
             </div>
@@ -101,7 +101,7 @@
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="mensagem" class="block text-sm font-bold mb-2">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="8"
+                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="8" required
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"></textarea>
                 </div>
             </div>
@@ -120,6 +120,7 @@
                 </button>
             </div>
         </form>
+
     </section>
 
     <footer class="bg-green-900 text-center py-4" style="background-color: #121212;">
@@ -134,13 +135,13 @@
     </a>
 
     <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        var response = grecaptcha.getResponse();
-        if (response.length === 0) {
-            alert('Por favor, complete o reCAPTCHA.');
-            event.preventDefault(); // Previne o envio do formulário
-        }
-    });
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                alert('Por favor, complete o reCAPTCHA.');
+                event.preventDefault(); // Previne o envio do formulário
+            }
+        });
     </script>
 </body>
 
