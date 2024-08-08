@@ -73,7 +73,7 @@
             echo 'Por favor, complete o reCAPTCHA.';
         } else {
             // Send email
-            $to = 'your-email@example.com'; // Altere para seu e-mail
+            $to = 'bortoline.25@gmail.com'; // Altere para seu e-mail
             $subject = 'Nova Mensagem do Formulário de Contato';
             $headers = "From: $email\r\n";
             $headers .= "Reply-To: $email\r\n";
