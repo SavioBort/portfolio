@@ -1,6 +1,6 @@
 .bg-black {
     position: relative;
-    background-image: url(''); 
+    background-image: url('../src/bg.jpeg'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -13,7 +13,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajuste o último valor (0.5) para alterar a intensidade do escurecimento */
+    background-color: rgba(0, 0, 0, 0.9); /* Ajuste o último valor (0.5) para alterar a intensidade do escurecimento */
     z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo principal */
 }
 .text-gradient-green-blue {
