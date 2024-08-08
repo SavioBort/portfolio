@@ -19,7 +19,7 @@
         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">
             Entre em contato
         </h2>
-        <form action="process_form.php" method="POST" class="w-full max-w-4xl" id="contactForm">
+        <form action="" method="POST" class="w-full max-w-4xl" id="contactForm">
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="nome" class="block text-sm font-bold mb-2">Nome</label>
