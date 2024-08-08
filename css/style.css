@@ -1,34 +1,72 @@
-/* Adicione este CSS ao seu arquivo ou dentro de uma tag <style> */
-.parallax {
-    /* A imagem de fundo será movida na direção oposta ao rolar */
-    background-image: url('../src/bg.png');
-    background-attachment: fixed;
-    /* Fixa a imagem no fundo */
-    background-position: center;
-    /* Centraliza a imagem */
-    background-repeat: no-repeat;
-    /* Evita repetição da imagem */
+.bg-black {
+    position: relative;
+    background-image: url(''); 
     background-size: cover;
-    /* Faz a imagem cobrir o contêiner */
+    background-attachment: fixed;
+    background-position: center;
 }
 
-/* Camada escura sobre a imagem de fundo */
-.relative .absolute.inset-0.bg-black {
+.bg-black::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(161, 20, 255, 0.5);
-    /* Ajuste a opacidade conforme necessário */
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste o último valor (0.5) para alterar a intensidade do escurecimento */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo principal */
+}
+.text-gradient-green-blue {
+    background-clip: text;
+    -webkit-background-clip: text; /* Para compatibilidade com navegadores WebKit */
+    color: transparent;
+    background-image: linear-gradient(90deg, #06f02d, #a8f199); /* Gradiente de duas cores (verde e azul) */
+}
+.custom-button:hover {
+    background-image: linear-gradient(90deg, #06f02d, #a8f199); /* Gradiente alterado para o hover */
+}
+.project-card {
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda fina */
+    transition: border-color 0.3s ease; /* Transição suave */
+    overflow: hidden; /* Garante que o cursor mude ao passar sobre o card */
+    position: relative; /* Necessário para pseudo-elementos */
 }
 
-/* Filtro escuro na imagem */
-.bg-center {
-    filter: brightness(70%);
-    /* Ajuste o valor para escurecer mais ou menos a imagem */
+.project-card:hover {
+    border-color: #22c55e; /* Cor da borda ao passar o mouse */
 }
-.filter-darken{
-    filter: brightness(100%);
+
+.project-image {
+    transition: opacity 0.3s ease; /* Transição suave para opacidade */
+}
+
+.project-card:hover .project-image {
+    opacity: 0.7; /* Opacidade ao passar o mouse */
+}
+
+.project-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente para texto */
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-content {
+    transform: translateY(0);
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    color: #ddd;
+    font-size: 1rem;
 }
