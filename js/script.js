@@ -22,7 +22,7 @@ form.addEventListener('submit', function (e) {
                 result.innerHTML = "Mensagem enviada com sucesso!";
             } else {
                 console.log(response);
-                result.innerHTML = json.message;
+                result.innerHTML = "json.message";
             }
         })
         .catch(error => {
