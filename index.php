@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 <body>
     <!-- Outros conteúdos do site -->
 
@@ -52,5 +54,44 @@
             </div>
         </form>
     </section>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nome = htmlspecialchars($_POST['nome']);
+        $email = htmlspecialchars($_POST['email']);
+        $mensagem = htmlspecialchars($_POST['mensagem']);
+        $recaptchaResponse = $_POST['g-recaptcha-response'];
+
+        // ReCAPTCHA Secret Key
+        $secret = '6LfwuiIqAAAAAKDoKYBPqDq00AWgYLst_pZlPHd7';
+        $remoteIp = $_SERVER['REMOTE_ADDR'];
+
+        // Verify ReCAPTCHA
+        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$recaptchaResponse&remoteip=$remoteIp");
+        $responseKeys = json_decode($response, true);
+
+        if (intval($responseKeys["success"]) !== 1) {
+            echo 'Por favor, complete o reCAPTCHA.';
+        } else {
+            // Send email
+            $to = 'your-email@example.com'; // Altere para seu e-mail
+            $subject = 'Nova Mensagem do Formulário de Contato';
+            $headers = "From: $email\r\n";
+            $headers .= "Reply-To: $email\r\n";
+            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+            $emailBody = "Nome: $nome\nE-mail: $email\n\nMensagem:\n$mensagem";
+
+            if (mail($to, $subject, $emailBody, $headers)) {
+                echo 'Mensagem enviada com sucesso!';
+            } else {
+                echo 'Falha ao enviar a mensagem.';
+            }
+        }
+    } else {
+        echo 'Método de solicitação inválido.';
+    }
+    ?>
+
 </body>
+
 </html>
