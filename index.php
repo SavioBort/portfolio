@@ -185,7 +185,7 @@
             </div>
 
             <div class="flex items-center justify-center">
-                <button type="submit"
+                <button type="submit" id="submitButton"
                     class="inline-block px-6 py-3 text-base font-semibold text-white bg-green-700 rounded-full hover:bg-green-600">
                     ENVIAR MENSAGEM
                 </button>
@@ -193,6 +193,7 @@
         </form>
 
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 
     </section>
