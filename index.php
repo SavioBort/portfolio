@@ -7,71 +7,31 @@
     <title>Sávio Bortoline</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <?php
-    $secret = '6LfwuiIqAAAAAKDoKYBPqDq00AWgYLst_pZlPHd7';
-    $recaptchaResponse = $_POST['g-recaptcha-response'];
-    $remoteIp = $_SERVER['REMOTE_ADDR'];
-
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$recaptchaResponse&remoteip=$remoteIp");
-    $responseKeys = json_decode($response, true);
-
-    if (intval($responseKeys["success"]) !== 1) {
-        echo 'Por favor, complete o reCAPTCHA';
-    } else {
-        // Continue com o processamento do formulário
-    }
-    ?>
-
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
     <nav class="bg-gray-900 bg-opacity-50 fixed inset-x-0 z-10" style="background-color: #121212;">
-
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-20 items-center justify-between">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-6">
                     <span class="text-white text-3xl font-bold">Sávio Bortoline</span>
                 </div>
-                <!--<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <button type="button"
-                        class="relative inline-flex items-center justify-center rounded-md p-3 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-0"
-                        aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="absolute -inset-0.5"></span>
-                        <span class="sr-only">Open main menu</span>
-
-                        <svg class="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-                        <svg class="hidden h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>-->
-
                 <div class="flex flex-1 items-center justify-end sm:items-stretch sm:justify-end">
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-8">
-                            <a href="#"
-                                class="px-5 py-3 text-lg font-medium text-white border-b-2 border-transparent hover:border-green-500 hover:text-green-500"
-                                aria-current="page">Home</a>
-                            <!--<a href="#"
-                                class="px-5 py-3 text-lg font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">About</a>-->
-                            <a href="#"
-                                class="px-5 py-3 text-lg font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Projects</a>
-                            <a href="#"
-                                class="px-5 py-3 text-lg font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Contact</a>
+                            <a href="#" class="px-5 py-3 text-lg font-medium text-white border-b-2 border-transparent hover:border-green-500 hover:text-green-500" aria-current="page">Home</a>
+                            <a href="#" class="px-5 py-3 text-lg font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Projects</a>
+                            <a href="#contact" class="px-5 py-3 text-lg font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Contact</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
+
     <div class="relative isolate overflow-hidden bg-black py-24 sm:py-32 flex items-center justify-center">
         <div class="absolute top-[20%] flex justify-center w-full">
             <img src="https://avatars.githubusercontent.com/u/118234357?v=4" alt="Profile"
@@ -87,69 +47,38 @@
                     <b>Desenvolvedor Backend e Frontend</b>
                 </p>
                 <p class="mt-6 text-lg leading-8 text-gray-300">
-                    Sou apaixonado por tecnologia e desenvolvo sites e aplicações para ajudar empresas a prosperar
-                    online. Minhas ferramentas preferidas são:
+                    Sou apaixonado por tecnologia e desenvolvo sites e aplicações para ajudar empresas a prosperar online. Minhas ferramentas preferidas são:
                 </p>
-
                 <p class="mt-6 text-lg leading-8 text-green-400">
                     <b>Wordpress, PHP e React Native.</b>
                 </p>
             </div>
             <div class="mt-12">
-                <a href="#contact"
-                    class="inline-block px-6 py-3 text-base font-semibold text-white bg-green-700 rounded-full hover:bg-green-600">
-                    ENTRAR EM CONTATO
-                </a>
+                <a href="#contact" class="inline-block px-6 py-3 text-base font-semibold text-white bg-green-700 rounded-full hover:bg-green-600">ENTRAR EM CONTATO</a>
             </div>
         </div>
     </div>
+
     <section class="relative py-24 sm:py-32 text-center text-white" style="background-color: #121212;">
-        <h1
-            class="absolute top-8 left-1/2 transform -translate-x-1/2 text-xl font-semibold tracking-tight mb-2 text-green-500">
-            Portfolio
-        </h1>
-        <h2
-            class="absolute top-11 left-1/2 transform -translate-x-1/2 text-3xl font-bold tracking-tight sm:text-4xl mb-8 mt-6 text-lg leading-8 text-white">
-            Meus Projetos
-        </h2>
+        <h1 class="absolute top-8 left-1/2 transform -translate-x-1/2 text-xl font-semibold tracking-tight mb-2 text-green-500">Portfolio</h1>
+        <h2 class="absolute top-11 left-1/2 transform -translate-x-1/2 text-3xl font-bold tracking-tight sm:text-4xl mb-8 mt-6 text-lg leading-8 text-white">Meus Projetos</h2>
         <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 mt-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
-                        alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image">
+                <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
+                    <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png" alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image">
                     <div class="project-content">
                         <h3 class="project-title">Website</h3>
                         <p class="project-description">Projeto Futuro Militar</p>
                     </div>
                 </a>
-                <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
-                        alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Website</h3>
-                        <p class="project-description">Projeto Futuro Militar</p>
-                    </div>
-                </a>
-                <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
-                        alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Website</h3>
-                        <p class="project-description">Projeto Futuro Militar</p>
-                    </div>
-                </a>
+                <!-- Adicione mais projetos conforme necessário -->
             </div>
         </div>
     </section>
-    <section
-        class="relative isolate overflow-hidden bg-black text-white py-8 flex flex-col items-center justify-center">
+
+    <section class="relative isolate overflow-hidden bg-black text-white py-8 flex flex-col items-center justify-center" id="contact">
         <h1 class="text-xl text-green-500 mb-4"><b>Contato</b></h1>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">
-            Entre em contato
-        </h2>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">Entre em contato</h2>
         <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-4xl" id="contactForm">
             <input type="hidden" name="access_key" value="595e7157-c115-4632-b9dd-0738aaa9beae">
 
@@ -191,12 +120,8 @@
                 </button>
             </div>
         </form>
-
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
-
     </section>
+
     <footer class="bg-green-900 text-center py-4" style="background-color: #121212;">
         <p class="text-sm text-white">© Sávio Bortoline 2024 - Todos os direitos reservados.</p>
     </footer>
@@ -207,6 +132,16 @@
         style="width: 50px; height: 50px;">
         <i class="fab fa-whatsapp text-xl"></i>
     </a>
+
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        var response = grecaptcha.getResponse();
+        if (response.length === 0) {
+            alert('Por favor, complete o reCAPTCHA.');
+            event.preventDefault(); // Previne o envio do formulário
+        }
+    });
+    </script>
 </body>
 
 </html>
