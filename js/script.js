@@ -36,3 +36,11 @@ form.addEventListener('submit', function (e) {
             }, 3000);
         });
 });
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    var response = grecaptcha.getResponse();
+    if (response.length === 0) {
+        // Se a resposta do reCAPTCHA estiver vazia, mostra um alerta e previne o envio do formulário
+        alert('Por favor, complete o reCAPTCHA.');
+        event.preventDefault(); // Previne o envio do formulário
+    }
+});
