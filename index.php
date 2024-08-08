@@ -78,7 +78,7 @@
     <section class="relative isolate overflow-hidden bg-black text-white py-8 flex flex-col items-center justify-center" id="contact">
         <h1 class="text-xl text-green-500 mb-4"><b>Contato</b></h1>
         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">Entre em contato</h2>
-        <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-4xl" id="contactForm">
+        <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-4xl">
             <input type="hidden" name="access_key" value="595e7157-c115-4632-b9dd-0738aaa9beae">
 
             <div class="flex flex-wrap mb-6">
@@ -132,56 +132,46 @@
         style="width: 50px; height: 50px;">
         <i class="fab fa-whatsapp text-xl"></i>
     </a>
-
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            var response = grecaptcha.getResponse();
-            if (response.length === 0) {
-                alert('Por favor, complete o reCAPTCHA.');
-                event.preventDefault(); // Previne o envio do formulário
-            }
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
+
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully";
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
         });
     </script>
-    <script>
-const form = document.getElementById('form');
-const result = document.getElementById('result');
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
-  result.innerHTML = "Please wait..."
-
-    fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-                result.innerHTML = "Form submitted successfully";
-            } else {
-                console.log(response);
-                result.innerHTML = json.message;
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            result.innerHTML = "Something went wrong!";
-        })
-        .then(function() {
-            form.reset();
-            setTimeout(() => {
-                result.style.display = "none";
-            }, 3000);
-        });
-});
-</script>
 </body>
 
 </html>
