@@ -151,7 +151,7 @@
         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">
             Entre em contato
         </h2>
-        <form action="https://formspree.io/f/mvgpraal" method="POST" class="w-full max-w-4xl" id="contactForm">
+        <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-4xl" id="contactForm">
             <input type="hidden" name="access_key" value="595e7157-c115-4632-b9dd-0738aaa9beae">
 
             <div class="flex flex-wrap mb-6">
