@@ -213,9 +213,30 @@
     </section>
 
     <!-- Rodapé -->
-    <footer class="bg-green-700 text-center py-2">
-        <p class="text-sm text-white">© Sávio Bortoline 2024 - Todos os direitos reservados.</p>
+    <footer class="bg-green-700 text-center py-2 animate-gradient">
+        <p class="text-sm text-black"><b>© Sávio Bortoline 2024 - Todos os direitos reservados.</b></p>
     </footer>
+    
+    <style>
+        .animate-gradient {
+            background: linear-gradient(90deg, #16a085, #27ae60, #2ecc71, #34db4a, #69b659);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+    
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+    
 
     <!-- Botão de WhatsApp -->
     <a href="https://api.whatsapp.com/send/?phone=35988545668&text&type=phone_number&app_absent=0" target="_blank"
