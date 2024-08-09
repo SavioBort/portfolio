@@ -8,6 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #mobile-menu {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const button = document.querySelector('[aria-controls="mobile-menu"]');
@@ -15,18 +20,27 @@
             const openIcon = button.querySelector('svg:first-child');
             const closeIcon = button.querySelector('svg:last-child');
 
-            button.addEventListener('click', function () {
+            function toggleMenu() {
                 const isExpanded = button.getAttribute('aria-expanded') === 'true';
                 button.setAttribute('aria-expanded', !isExpanded);
                 menu.classList.toggle('hidden', isExpanded);
                 openIcon.classList.toggle('hidden', !isExpanded);
                 closeIcon.classList.toggle('hidden', isExpanded);
+            }
+
+            button.addEventListener('click', toggleMenu);
+
+            document.addEventListener('click', function (event) {
+                if (!menu.contains(event.target) && !button.contains(event.target) && !menu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
             });
         });
     </script>
 </head>
 
-<body>
+<body class="bg-black text-white">
+    <!-- Navegação -->
     <nav class="bg-gray-900 bg-opacity-50 fixed inset-x-0 z-10" style="background-color: #121212;">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-20 items-center justify-between">
@@ -37,9 +51,7 @@
                     <button type="button"
                         class="relative inline-flex items-center justify-center rounded-md p-3 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-0"
                         aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="absolute -inset-0.5"></span>
                         <span class="sr-only">Open main menu</span>
-            
                         <svg class="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -51,15 +63,12 @@
                         </svg>
                     </button>
                 </div>
-
                 <div class="flex flex-1 items-center justify-end sm:items-stretch sm:justify-end">
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-8">
                             <a href="#"
                                 class="px-5 py-3 text-lg font-medium text-white border-b-2 border-transparent hover:border-green-500 hover:text-green-500"
                                 aria-current="page">Home</a>
-                            <!--<a href="#"
-                                class="px-5 py-3 text-lg font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">About</a>-->
                             <a href="#projects"
                                 class="px-5 py-3 text-lg font-medium text-gray-300 border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Projetos</a>
                             <a href="#contact"
@@ -72,11 +81,17 @@
     </nav>
 
     <!-- Menu Móvel -->
-    <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-20 hidden">
+    <div id="mobile-menu" class="hidden">
         <div class="flex flex-col items-end p-4">
             <button type="button" class="text-white text-3xl" aria-controls="mobile-menu" aria-expanded="false">
-                <svg class="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <svg class="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <svg class="hidden h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
             <div class="flex flex-col mt-8 space-y-6 text-center">
@@ -91,12 +106,12 @@
         </div>
     </div>
 
+    <!-- Seção Principal -->
     <div class="relative isolate overflow-hidden bg-black py-24 sm:py-32 flex items-center justify-center">
         <div class="absolute top-[20%] flex justify-center w-full">
             <img src="https://avatars.githubusercontent.com/u/118234357?v=4" alt="Profile"
                 class="w-64 h-64 rounded-full border-4 border-green-500 m-2.5">
         </div>
-
         <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
             <div class="mx-auto max-w-2xl lg:mx-0 mt-96">
                 <h2 class="text-4xl font-bold tracking-tight sm:text-6xl text-white">
@@ -109,7 +124,6 @@
                     Sou apaixonado por tecnologia e desenvolvo sites e aplicações para ajudar empresas a prosperar
                     online. Minhas ferramentas preferidas são:
                 </p>
-
                 <p class="mt-6 text-lg leading-8 text-green-400">
                     <b>Wordpress, PHP e React Native.</b>
                 </p>
@@ -123,6 +137,7 @@
         </div>
     </div>
 
+    <!-- Projetos -->
     <section class="relative py-24 sm:py-32 text-center text-white" id="projects" style="background-color: #121212;">
         <h1
             class="absolute top-8 left-1/2 transform -translate-x-1/2 text-xl font-semibold tracking-tight mb-2 text-green-500">
@@ -143,6 +158,7 @@
                         <p class="project-description">Projeto Futuro Militar</p>
                     </div>
                 </a>
+                <!-- Repete os projetos como exemplo, considere adicionar diferentes projetos -->
                 <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
                     class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
                     <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
@@ -165,6 +181,7 @@
         </div>
     </section>
 
+    <!-- Contato -->
     <section
         class="relative isolate overflow-hidden bg-black text-white py-16 flex flex-col items-center justify-center"
         id="contact">
@@ -172,7 +189,7 @@
             class="absolute top-5 left-1/2 transform -translate-x-1/2 text-xl font-semibold tracking-tight mb-2 text-green-500">
             Contato
         </h1>
-        <h2 class="text-3x2 sm:text-4xl font-bold tracking-tight mb-8 text-white">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">
             Entre em contato
         </h2>
         <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-4xl" id="contactForm">
@@ -207,6 +224,7 @@
         </form>
     </section>
 
+    <!-- Rodapé -->
     <footer class="bg-green-900 text-center py-4" style="background-color: #121212;">
         <p class="text-sm text-white">© Sávio Bortoline 2024 - Todos os direitos reservados.</p>
     </footer>
