@@ -92,3 +92,23 @@
 #mobile-menu {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
+.animate-gradient {
+    background: linear-gradient(90deg, #0b2415, #001a0b, #1a1f1c, #17311a, #0e4702);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
