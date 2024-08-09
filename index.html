@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Projetos -->
     <section class="relative py-24 sm:py-32 text-center text-white" id="projects" style="background-color: #121212;">
         <h1
@@ -204,7 +204,7 @@
             </div>
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
-                    <label for="captcha" class="block text-sm font-bold mb-2">Quanto é 1 + 1?</label>
+                    <label id="captchaQuestion" for="captcha" class="block text-sm font-bold mb-2"></label>
                     <input id="captcha" type="text" name="captcha" placeholder="Digite sua resposta" required
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
                 </div>
@@ -216,17 +216,37 @@
                 </button>
             </div>
         </form>
-        
+
         <script>
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
+            // Perguntas e respostas possíveis
+            const questions = [
+                { question: "Quanto é 2 + 2?", answer: "4" },
+                { question: "Quanto é 3 + 5?", answer: "8" },
+                { question: "Quanto é 7 - 3?", answer: "4" },
+                { question: "Quanto é 6 + 1?", answer: "7" },
+                { question: "Quanto é 10 - 2?", answer: "8" },
+                { question: "Quanto é 4 + 4?", answer: "8" },
+                { question: "Quanto é 5 - 1?", answer: "4" },
+                { question: "Quanto é 1 + 1?", answer: "2" },
+                { question: "Quanto é 8 - 5?", answer: "3" },
+                { question: "Quanto é 9 - 7?", answer: "2" }
+            ];
+
+            // Seleciona uma pergunta aleatória
+            const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+
+            // Exibe a pergunta
+            document.getElementById('captchaQuestion').innerText = randomQuestion.question;
+
+            // Valida a resposta
+            document.getElementById('contactForm').addEventListener('submit', function (event) {
                 const captchaValue = document.getElementById('captcha').value;
-                if (captchaValue !== '2') {
+                if (captchaValue !== randomQuestion.answer) {
                     event.preventDefault();
                     alert('Por favor, responda corretamente à pergunta de verificação.');
                 }
             });
         </script>
-        
 
     </section>
 
@@ -234,27 +254,29 @@
     <footer class="bg-green-700 text-center py-2 animate-gradient">
         <p class="text-sm text-white">© Sávio Bortoline 2024 - Todos os direitos reservados.</p>
     </footer>
-    
+
     <style>
         .animate-gradient {
             background: linear-gradient(90deg, #0b2415, #001a0b, #1a1f1c, #17311a, #0e4702);
             background-size: 400% 400%;
             animation: gradientAnimation 15s ease infinite;
         }
-    
+
         @keyframes gradientAnimation {
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
         }
     </style>
-    
+
 
     <!-- Botão de WhatsApp -->
     <a href="https://api.whatsapp.com/send/?phone=35988545668&text&type=phone_number&app_absent=0" target="_blank"
