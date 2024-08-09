@@ -14,33 +14,33 @@
         }
     </style>
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const button = document.querySelector('[aria-controls="mobile-menu"]');
-    const menu = document.getElementById('mobile-menu');
-    const openIcon = button.querySelector('svg:first-child');
-    const closeIcon = button.querySelector('svg:last-child');
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.querySelector('[aria-controls="mobile-menu"]');
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = button.querySelector('svg:first-child');
+            const closeIcon = button.querySelector('svg:last-child');
 
-    // Função para abrir ou fechar o menu
-    function toggleMenu() {
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', !isExpanded);
-        menu.classList.toggle('hidden', isExpanded);
-        openIcon.classList.toggle('hidden', !isExpanded);
-        closeIcon.classList.toggle('hidden', isExpanded);
-    }
-
-    // Adiciona evento de clique ao botão
-    button.addEventListener('click', toggleMenu);
-
-    // Fecha o menu ao clicar fora
-    document.addEventListener('click', function (event) {
-        if (!menu.contains(event.target) && !button.contains(event.target)) {
-            if (!menu.classList.contains('hidden')) {
-                toggleMenu();
+            // Função para abrir ou fechar o menu
+            function toggleMenu() {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !isExpanded);
+                menu.classList.toggle('hidden', isExpanded);
+                openIcon.classList.toggle('hidden', !isExpanded);
+                closeIcon.classList.toggle('hidden', isExpanded);
             }
-        }
-    });
-});
+
+            // Adiciona evento de clique ao botão
+            button.addEventListener('click', toggleMenu);
+
+            // Fecha o menu ao clicar fora
+            document.addEventListener('click', function (event) {
+                if (!menu.contains(event.target) && !button.contains(event.target)) {
+                    if (!menu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                }
+            });
+        });
 
 
     </script>
@@ -97,16 +97,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 </svg>
             </button>-->
             <div class="flex flex-col mt-8 space-y-6 text-center">
-                <a href="#" class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500" aria-current="page">Home</a>
-                <a href="#projects" class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Projetos</a>
-                <a href="#contact" class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Contato</a>
+                <a href="#"
+                    class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500"
+                    aria-current="page">Home</a>
+                <a href="#projects"
+                    class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Projetos</a>
+                <a href="#contact"
+                    class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Contato</a>
             </div>
         </div>
     </div>
-    
-    
-    
-    
     <!-- Seção Principal -->
     <div class="relative isolate overflow-hidden bg-black py-24 sm:py-32 flex items-center justify-center">
         <div class="absolute top-[20%] flex justify-center w-full">
@@ -198,21 +198,21 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="nome" class="block text-sm font-bold mb-2">Nome</label>
-                    <input id="nome" type="text" name="nome" placeholder="Seu nome"
+                    <input id="nome" type="text" name="nome" placeholder="Seu nome" required
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
                 </div>
             </div>
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="email" class="block text-sm font-bold mb-2">E-mail</label>
-                    <input id="email" type="email" name="email" placeholder="Seu e-mail"
+                    <input id="email" type="email" name="email" placeholder="Seu e-mail" required
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
                 </div>
             </div>
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="mensagem" class="block text-sm font-bold mb-2">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="8"
+                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="8" required
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"></textarea>
                 </div>
             </div>
@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </button>
             </div>
         </form>
+        
     </section>
 
     <!-- Rodapé -->
@@ -233,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Botão de WhatsApp -->
     <a href="https://api.whatsapp.com/send/?phone=35988545668&text&type=phone_number&app_absent=0" target="_blank"
         class="fixed right-4 bottom-4 z-50 bg-green-800 hover:bg-green-600 text-white p-4 rounded-full shadow-md transition duration-300 flex items-center justify-center"
-        style="width: 50px; height: 50px;">
+        style="width: 40px; height: 40px;">
         <i class="fab fa-whatsapp text-xl"></i>
     </a>
 </body>
