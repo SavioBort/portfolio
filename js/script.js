@@ -36,3 +36,30 @@ form.addEventListener('submit', function (e) {
             }, 3000);
         });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const button = document.querySelector('[aria-controls="mobile-menu"]');
+    const menu = document.getElementById('mobile-menu');
+    const openIcon = button.querySelector('svg:first-child');
+    const closeIcon = button.querySelector('svg:last-child');
+
+    // Função para abrir ou fechar o menu
+    function toggleMenu() {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('hidden', isExpanded);
+        openIcon.classList.toggle('hidden', !isExpanded);
+        closeIcon.classList.toggle('hidden', isExpanded);
+    }
+
+    // Adiciona evento de clique ao botão
+    button.addEventListener('click', toggleMenu);
+
+    // Fecha o menu ao clicar fora
+    document.addEventListener('click', function (event) {
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+            if (!menu.classList.contains('hidden')) {
+                toggleMenu();
+            }
+        }
+    });
+});

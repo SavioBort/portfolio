@@ -8,11 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        #mobile-menu {
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const button = document.querySelector('[aria-controls="mobile-menu"]');
@@ -41,8 +36,6 @@
                 }
             });
         });
-
-
     </script>
 </head>
 
@@ -90,12 +83,6 @@
     <!-- Menu Móvel -->
     <div id="mobile-menu" class="fixed top-20 right-0 bottom-0 bg-gray-900 bg-opacity-75 z-20 hidden w-3/4 max-w-xs">
         <div class="flex flex-col items-end p-4 h-full">
-            <!--<button type="button" class="text-white text-3xl" aria-controls="mobile-menu" aria-expanded="false" id="menu-toggle">
-               Ícone de Menu (para alternar) 
-                <svg class="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </button>-->
             <div class="flex flex-col mt-8 space-y-6 text-center">
                 <a href="#"
                     class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500"
@@ -223,7 +210,7 @@
                 </button>
             </div>
         </form>
-        
+
     </section>
 
     <!-- Rodapé -->

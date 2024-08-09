@@ -1,6 +1,6 @@
 .bg-black {
     position: relative;
-    background-image: url('../src/bg.jpeg'); 
+    background-image: url('../src/bg.jpeg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -13,23 +13,26 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9); 
-    z-index: -1; 
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: -1;
 }
+
 .text-gradient-green-blue {
     background-clip: text;
-    -webkit-background-clip: text; 
+    -webkit-background-clip: text;
     color: transparent;
-    background-image: linear-gradient(90deg, #06f02d, #a8f199); 
+    background-image: linear-gradient(90deg, #06f02d, #a8f199);
 }
+
 .custom-button:hover {
-    background-image: linear-gradient(90deg, #06f02d, #a8f199); 
+    background-image: linear-gradient(90deg, #06f02d, #a8f199);
 }
+
 .project-card {
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    transition: border-color 0.3s ease; 
-    overflow: hidden; 
-    position: relative; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+    position: relative;
 }
 
 .project-card:hover {
@@ -37,7 +40,7 @@
 }
 
 .project-image {
-    transition: opacity 0.3s ease; 
+    transition: opacity 0.3s ease;
 }
 
 .project-card:hover .project-image {
@@ -70,14 +73,22 @@
     color: #ddd;
     font-size: 1rem;
 }
+
 .font-custom {
     font-family: 'Roboto', sans-serif;
 }
+
 #mobile-menu {
-    transform: translateX(100%); /* Inicialmente movido para fora da tela */
+    transform: translateX(100%);
+    /* Inicialmente movido para fora da tela */
     transition: transform 0.3s ease-in-out;
 }
 
 #mobile-menu:not(.hidden) {
-    transform: translateX(0); /* Exibido na tela */
+    transform: translateX(0);
+    /* Exibido na tela */
+}
+
+#mobile-menu {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
