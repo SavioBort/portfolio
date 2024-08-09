@@ -73,3 +73,11 @@
 .font-custom {
     font-family: 'Roboto', sans-serif;
 }
+#mobile-menu {
+    transform: translateX(100%); /* Inicialmente movido para fora da tela */
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu:not(.hidden) {
+    transform: translateX(0); /* Exibido na tela */
+}

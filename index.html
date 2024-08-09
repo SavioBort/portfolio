@@ -14,28 +14,29 @@
         }
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const button = document.querySelector('[aria-controls="mobile-menu"]');
-            const menu = document.getElementById('mobile-menu');
-            const openIcon = button.querySelector('svg:first-child');
-            const closeIcon = button.querySelector('svg:last-child');
+document.addEventListener('DOMContentLoaded', function () {
+    const button = document.querySelector('[aria-controls="mobile-menu"]');
+    const menu = document.getElementById('mobile-menu');
+    const openIcon = button.querySelector('svg:first-child');
+    const closeIcon = button.querySelector('svg:last-child');
 
-            function toggleMenu() {
-                const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                button.setAttribute('aria-expanded', !isExpanded);
-                menu.classList.toggle('hidden', isExpanded);
-                openIcon.classList.toggle('hidden', !isExpanded);
-                closeIcon.classList.toggle('hidden', isExpanded);
-            }
+    function toggleMenu() {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('hidden', isExpanded);
+        openIcon.classList.toggle('hidden', !isExpanded);
+        closeIcon.classList.toggle('hidden', isExpanded);
+    }
 
-            button.addEventListener('click', toggleMenu);
+    button.addEventListener('click', toggleMenu);
 
-            document.addEventListener('click', function (event) {
-                if (!menu.contains(event.target) && !button.contains(event.target) && !menu.classList.contains('hidden')) {
-                    toggleMenu();
-                }
-            });
-        });
+    document.addEventListener('click', function (event) {
+        if (!menu.contains(event.target) && !button.contains(event.target) && !menu.classList.contains('hidden')) {
+            toggleMenu();
+        }
+    });
+});
+
     </script>
 </head>
 
@@ -81,31 +82,27 @@
     </nav>
 
     <!-- Menu Móvel -->
-    <div id="mobile-menu" class="fixed bg-gray-1000 bg-opacity-75 z-20 hidden">
-        <div class="flex flex-col items-end p-4">
+    <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 bg-gray-900 bg-opacity-75 z-20 hidden w-3/4 max-w-xs">
+        <div class="flex flex-col items-end p-4 h-full">
             <button type="button" class="text-white text-3xl" aria-controls="mobile-menu" aria-expanded="false">
-                <svg class="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                    aria-hidden="true">
+                <!-- Ícone de Fechar -->
+                <svg class="block h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-                <svg class="hidden h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <!-- Ícone de Menu (para alternar) -->
+                <svg class="hidden h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
             <div class="flex flex-col mt-8 space-y-6 text-center">
-                <a href="#"
-                    class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500"
-                    aria-current="page">Home</a>
-                <a href="#projects"
-                    class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Projetos</a>
-                <a href="#contact"
-                    class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Contato</a>
+                <a href="#" class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500" aria-current="page">Home</a>
+                <a href="#projects" class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Projetos</a>
+                <a href="#contact" class="text-white text-lg font-medium border-b-2 border-transparent hover:border-green-500 hover:text-green-500">Contato</a>
             </div>
         </div>
     </div>
-
+    
+    
     <!-- Seção Principal -->
     <div class="relative isolate overflow-hidden bg-black py-24 sm:py-32 flex items-center justify-center">
         <div class="absolute top-[20%] flex justify-center w-full">
