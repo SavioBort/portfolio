@@ -165,10 +165,10 @@
                 </a>
                 <div class="mx-auto max-w-7xl px-6 lg:px-8 relative mt-4">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Card 1 -->
+                        <!-- Card com a funcionalidade para abrir a imagem no modal -->
                         <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
-                            data-image="./src/empreedimentos.PNG">
-                            <img src="./src/MovieApp.jpeg" alt="Projeto Imagem"
+                            data-image="https://source.unsplash.com/IXY9Eri2t2U/500x300">
+                            <img src="https://source.unsplash.com/IXY9Eri2t2U/500x300" alt="Projeto Imagem"
                                 class="mx-auto mb-4 rounded-lg project-image"
                                 style="width: 300px; height: 200px; object-fit: contain;">
                             <div class="project-content">
@@ -177,33 +177,33 @@
                             </div>
                         </a>
 
-                        <!-- Card 2 -->
-                        <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
-                            data-image="https://source.unsplash.com/Wpnoqo2plf4/500x300">
-                            <img src="https://source.unsplash.com/Wpnoqo2plf4/500x300" alt="Projeto Imagem"
-                                class="mx-auto mb-4 rounded-lg project-image"
+                        <!-- Card 2 (sem funcionalidade de abrir imagem no modal) -->
+                        <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
+                            class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
+                            <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
+                                alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image"
                                 style="width: 300px; height: 200px; object-fit: contain;">
                             <div class="project-content">
-                                <h3 class="project-title">Galeria de Imagens</h3>
-                                <p class="project-description">Clique para ver a imagem em tamanho grande</p>
+                                <h3 class="project-title">Website</h3>
+                                <p class="project-description">Projeto Futuro Militar</p>
                             </div>
                         </a>
 
-                        <!-- Card 3 -->
-                        <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
-                            data-image="https://source.unsplash.com/KJm9T3R-ZGk/500x300">
-                            <img src="https://source.unsplash.com/KJm9T3R-ZGk/500x300" alt="Projeto Imagem"
+                        <!-- Card 3 (sem funcionalidade de abrir imagem no modal) -->
+                        <a href="https://yureribeiro.saviobortoline.com/" target="_blank" rel="noopener noreferrer"
+                            class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
+                            <img src="./src/empreedimentos.PNG" alt="Empreendimentos Imobiliários"
                                 class="mx-auto mb-4 rounded-lg project-image"
                                 style="width: 300px; height: 200px; object-fit: contain;">
                             <div class="project-content">
-                                <h3 class="project-title">Galeria de Imagens</h3>
-                                <p class="project-description">Clique para ver a imagem em tamanho grande</p>
+                                <h3 class="project-title">Website</h3>
+                                <p class="project-description">Empreendimentos Imobiliários</p>
                             </div>
                         </a>
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Modal para exibir a imagem -->
                 <div
                     class="modal hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
                     <div class="modal-content max-w-full max-h-full">
@@ -214,20 +214,18 @@
                 </div>
 
                 <script>
-                    // Encontrar todos os links dos cards
-                    const cards = document.querySelectorAll('.project-card');
+                    // Encontrar o card que vai abrir a imagem no modal
+                    const imageCard = document.querySelector('.project-card'); // Somente o primeiro card
                     const modal = document.querySelector('.modal');
                     const modalImage = document.querySelector('.modal-image');
                     const closeModalButton = document.querySelector('.close-modal');
 
-                    // Adicionar o evento de clique para abrir o modal
-                    cards.forEach(card => {
-                        card.addEventListener('click', function (event) {
-                            event.preventDefault();  // Impede o link de abrir outra página
-                            const imageUrl = card.getAttribute('data-image');  // Pega a URL da imagem
-                            modalImage.src = imageUrl;  // Define a imagem no modal
-                            modal.classList.remove('hidden');  // Exibe o modal
-                        });
+                    // Evento de clique no card que irá abrir a imagem no modal
+                    imageCard.addEventListener('click', function (event) {
+                        event.preventDefault();  // Impede o link de abrir outra página
+                        const imageUrl = imageCard.getAttribute('data-image');  // Pega a URL da imagem
+                        modalImage.src = imageUrl;  // Define a imagem no modal
+                        modal.classList.remove('hidden');  // Exibe o modal
                     });
 
                     // Fechar o modal ao clicar no botão de fechar
@@ -235,6 +233,7 @@
                         modal.classList.add('hidden');  // Esconde o modal
                     });
                 </script>
+
 
 
             </div>
