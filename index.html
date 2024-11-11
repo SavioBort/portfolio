@@ -183,8 +183,17 @@
         <!-- Modal para exibir a imagem -->
         <div
             class="modal hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
-            <div class="modal-content max-w-full max-h-full">
+            <div class="modal-content relative max-w-full max-h-full">
+                <!-- Setas de navegação -->
+                <button
+                    class="arrow-left absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full">
+                    &#10094;
+                </button>
                 <img src="" alt="Imagem Modal" class="modal-image max-w-[60vw] max-h-[60vh]">
+                <button
+                    class="arrow-right absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full">
+                    &#10095;
+                </button>
             </div>
         </div>
 
@@ -201,6 +210,8 @@
             const specialCard = document.querySelector('.project-card[data-image]');  // O card que tem a funcionalidade especial
             const modal = document.querySelector('.modal');
             const modalImage = document.querySelector('.modal-image');
+            const arrowLeft = document.querySelector('.arrow-left');
+            const arrowRight = document.querySelector('.arrow-right');
 
             // Variável para rastrear a imagem atual
             let currentImageIndex = 0;
@@ -220,12 +231,16 @@
                 }
             });
 
-            // Evento de navegação entre as imagens no modal
-            modal.addEventListener('click', function (event) {
-                if (event.target === modalImage) { // Só muda a imagem se clicar na imagem
-                    currentImageIndex = (currentImageIndex + 1) % images.length; // Avança para a próxima imagem
-                    modalImage.src = images[currentImageIndex];  // Atualiza a imagem
-                }
+            // Navegar para a próxima imagem ao clicar na seta direita
+            arrowRight.addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length; // Avança para a próxima imagem
+                modalImage.src = images[currentImageIndex];  // Atualiza a imagem
+            });
+
+            // Navegar para a imagem anterior ao clicar na seta esquerda
+            arrowLeft.addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Retrocede para a imagem anterior
+                modalImage.src = images[currentImageIndex];  // Atualiza a imagem
             });
         </script>
 
