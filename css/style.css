@@ -112,15 +112,3 @@
         background-position: 0% 50%;
     }
 }
-.arrow-left, .arrow-right {
-    background-color: transparent;  /* Seta transparente */
-    border: 2px solid rgb(14, 141, 35);  /* Adiciona uma borda branca para a seta */
-    color: rgb(247, 9, 9);  /* Cor da seta (ícone) */
-    padding: 8px;
-    border-radius: 50%;  /* Tornar as setas arredondadas */
-    z-index: 10;
-}
-
-.arrow-left:hover, .arrow-right:hover {
-    background-color: rgb(255, 255, 255);  /* Leve destaque no hover */
-}
