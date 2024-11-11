@@ -163,6 +163,48 @@
                         <p class="project-description">Empreendimentos Imobiliários</p>
                     </div>
                 </a>
+                <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
+                    data-modal="true">
+                    <img src="https://source.unsplash.com/IXY9Eri2t2U/500x300" alt="Projeto Imagem Modal"
+                        class="mx-auto mb-4 rounded-lg project-image"
+                        style="width: 300px; height: 200px; object-fit: contain;">
+                    <div class="project-content">
+                        <h3 class="project-title">Galeria de Imagens</h3>
+                        <p class="project-description">Clique para ver as imagens</p>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal hidden absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70 z-50 flex justify-center items-center"
+                        style="display: none;">
+                        <div class="modal-content bg-white p-6 rounded-lg">
+                            <div class="modal-images">
+                                <img src="https://source.unsplash.com/IXY9Eri2t2U/500x300" alt="Imagem 1"
+                                    class="modal-image mb-4">
+                                <img src="https://source.unsplash.com/IXY9Eri2t2U/500x300" alt="Imagem 2"
+                                    class="modal-image mb-4">
+                                <img src="https://source.unsplash.com/IXY9Eri2t2U/500x300" alt="Imagem 3"
+                                    class="modal-image">
+                            </div>
+                            <button class="close-modal bg-red-600 text-white py-2 px-4 rounded-lg mt-4">Fechar</button>
+                        </div>
+                    </div>
+                </a>
+
+                <script>
+                    const card = document.querySelector('[data-modal="true"]');
+                    const modal = card.querySelector('.modal');
+                    const closeModalButton = modal.querySelector('.close-modal');
+
+                    card.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        modal.style.display = 'flex';
+                    });
+
+                    closeModalButton.addEventListener('click', function () {
+                        modal.style.display = 'none';
+                    });
+                </script>
+
             </div>
         </div>
     </section>
