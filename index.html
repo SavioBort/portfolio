@@ -173,7 +173,7 @@
                         style="width: 300px; height: 200px; object-fit: contain;">
                     <div class="project-content">
                         <h3 class="project-title">Galeria de Imagens</h3>
-                        <p class="project-description">Clique para ver a imagem em tamanho grande</p>
+                        <p class="project-description">Clique para ver as imagens em tamanho grande</p>
                     </div>
                 </a>
 
@@ -184,18 +184,26 @@
         <div
             class="modal hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
             <div class="modal-content max-w-full max-h-full">
-                <img src="" alt="Imagem Modal" class="modal-image max-w-[80vw] max-h-[80vh]">
-                <button
-                    class="close-modal absolute top-4 right-4 bg-red-600 text-white py-2 px-4 rounded-lg">Fechar</button>
+                <img src="" alt="Imagem Modal" class="modal-image max-w-[60vw] max-h-[60vh]">
             </div>
         </div>
 
         <script>
+            // Imagens para o modal
+            const images = [
+                "./src/empreedimentos.PNG",
+                "./src/MovieApp.jpeg",
+                "./src/node.PNG", // Mais imagens para o modal
+                "https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
+            ];
+
             // Encontrar o card especial que irá abrir a imagem no modal
             const specialCard = document.querySelector('.project-card[data-image]');  // O card que tem a funcionalidade especial
             const modal = document.querySelector('.modal');
             const modalImage = document.querySelector('.modal-image');
-            const closeModalButton = document.querySelector('.close-modal');
+
+            // Variável para rastrear a imagem atual
+            let currentImageIndex = 0;
 
             // Evento de clique no card que irá abrir a imagem no modal
             specialCard.addEventListener('click', function (event) {
@@ -205,15 +213,18 @@
                 modal.classList.remove('hidden');  // Exibe o modal
             });
 
-            // Fechar o modal ao clicar no botão de fechar
-            closeModalButton.addEventListener('click', function () {
-                modal.classList.add('hidden');  // Esconde o modal
-            });
-
             // Fechar o modal ao clicar fora da imagem (área preta)
             modal.addEventListener('click', function (event) {
                 if (event.target === modal) {
-                    modal.classList.add('hidden');  // Esconde o modal se clicar fora da imagem
+                    modal.classList.add('hidden');  // Esconde o modal
+                }
+            });
+
+            // Evento de navegação entre as imagens no modal
+            modal.addEventListener('click', function (event) {
+                if (event.target === modalImage) { // Só muda a imagem se clicar na imagem
+                    currentImageIndex = (currentImageIndex + 1) % images.length; // Avança para a próxima imagem
+                    modalImage.src = images[currentImageIndex];  // Atualiza a imagem
                 }
             });
         </script>
