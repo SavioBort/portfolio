@@ -163,44 +163,79 @@
                         <p class="project-description">Empreendimentos Imobiliários</p>
                     </div>
                 </a>
-                <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
-                    data-modal="true">
-                    <img src="./src/MovieApp.jpeg" alt="Projeto Imagem Modal"
-                        class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Galeria de Imagens</h3>
-                        <p class="project-description">Clique para ver a imagem em tamanho grande</p>
-                    </div>
+                <div class="mx-auto max-w-7xl px-6 lg:px-8 relative mt-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
+                            data-image="./src/empreedimentos.PNG">
+                            <img src="./src/MovieApp.jpeg" alt="Projeto Imagem"
+                                class="mx-auto mb-4 rounded-lg project-image"
+                                style="width: 300px; height: 200px; object-fit: contain;">
+                            <div class="project-content">
+                                <h3 class="project-title">Galeria de Imagens</h3>
+                                <p class="project-description">Clique para ver a imagem em tamanho grande</p>
+                            </div>
+                        </a>
 
-                    <!-- Modal -->
-                    <div class="modal hidden absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70 z-50 flex justify-center items-center"
-                        style="display: none;">
-                        <div class="modal-content">
-                            <img src="https://source.unsplash.com/IXY9Eri2t2U/1000x600" alt="Imagem Modal"
-                                class="modal-image max-w-full max-h-screen">
-                            <button class="close-modal bg-red-600 text-white py-2 px-4 rounded-lg mt-4">Fechar</button>
-                        </div>
+                        <!-- Card 2 -->
+                        <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
+                            data-image="https://source.unsplash.com/Wpnoqo2plf4/500x300">
+                            <img src="https://source.unsplash.com/Wpnoqo2plf4/500x300" alt="Projeto Imagem"
+                                class="mx-auto mb-4 rounded-lg project-image"
+                                style="width: 300px; height: 200px; object-fit: contain;">
+                            <div class="project-content">
+                                <h3 class="project-title">Galeria de Imagens</h3>
+                                <p class="project-description">Clique para ver a imagem em tamanho grande</p>
+                            </div>
+                        </a>
+
+                        <!-- Card 3 -->
+                        <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
+                            data-image="https://source.unsplash.com/KJm9T3R-ZGk/500x300">
+                            <img src="https://source.unsplash.com/KJm9T3R-ZGk/500x300" alt="Projeto Imagem"
+                                class="mx-auto mb-4 rounded-lg project-image"
+                                style="width: 300px; height: 200px; object-fit: contain;">
+                            <div class="project-content">
+                                <h3 class="project-title">Galeria de Imagens</h3>
+                                <p class="project-description">Clique para ver a imagem em tamanho grande</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
+
+                <!-- Modal -->
+                <div
+                    class="modal hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
+                    <div class="modal-content max-w-full max-h-full">
+                        <img src="" alt="Imagem Modal" class="modal-image max-w-full max-h-screen">
+                        <button
+                            class="close-modal absolute top-4 right-4 bg-red-600 text-white py-2 px-4 rounded-lg">Fechar</button>
+                    </div>
+                </div>
 
                 <script>
-                    const card = document.querySelector('[data-modal="true"]');
-                    const modal = card.querySelector('.modal');
-                    const modalImage = modal.querySelector('.modal-image');
-                    const closeModalButton = modal.querySelector('.close-modal');
+                    // Encontrar todos os links dos cards
+                    const cards = document.querySelectorAll('.project-card');
+                    const modal = document.querySelector('.modal');
+                    const modalImage = document.querySelector('.modal-image');
+                    const closeModalButton = document.querySelector('.close-modal');
 
-                    card.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        const imageUrl = card.querySelector('img').src.replace('500x300', '1000x600'); // Altere o tamanho da imagem para maior
-                        modalImage.src = imageUrl;
-                        modal.style.display = 'flex';
+                    // Adicionar o evento de clique para abrir o modal
+                    cards.forEach(card => {
+                        card.addEventListener('click', function (event) {
+                            event.preventDefault();  // Impede o link de abrir outra página
+                            const imageUrl = card.getAttribute('data-image');  // Pega a URL da imagem
+                            modalImage.src = imageUrl;  // Define a imagem no modal
+                            modal.classList.remove('hidden');  // Exibe o modal
+                        });
                     });
 
+                    // Fechar o modal ao clicar no botão de fechar
                     closeModalButton.addEventListener('click', function () {
-                        modal.style.display = 'none';
+                        modal.classList.add('hidden');  // Esconde o modal
                     });
                 </script>
+
 
             </div>
         </div>
