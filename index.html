@@ -144,27 +144,7 @@
                         <p class="project-description">Projeto Futuro Militar</p>
                     </div>
                 </a>
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7217368548698910721/" target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/node.PNG" alt="Automação de impressoras"
-                        class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Node Red</h3>
-                        <p class="project-description">Automação de impressoras</p>
-                    </div>
-                </a>
-                <a href="https://yureribeiro.saviobortoline.com/" target="_blank" rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/empreedimentos.PNG" alt="Projeto Futuro Militar"
-                        class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Website</h3>
-                        <p class="project-description">Empreendimentos Imobiliários</p>
-                    </div>
-                </a>
+                <!-- Outros cards... -->
 
                 <!-- Último Card que abre a imagem no modal -->
                 <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
@@ -186,12 +166,12 @@
             <div class="modal-content relative max-w-full max-h-full flex justify-center items-center">
                 <!-- Setas de navegação fora da imagem -->
                 <button
-                    class="arrow-left absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full">
+                    class="arrow-left absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full z-10">
                     &#10094;
                 </button>
                 <img src="" alt="Imagem Modal" class="modal-image max-w-[60vw] max-h-[60vh]">
                 <button
-                    class="arrow-right absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full">
+                    class="arrow-right absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full z-10">
                     &#10095;
                 </button>
             </div>
@@ -243,6 +223,7 @@
                 modalImage.src = images[currentImageIndex];  // Atualiza a imagem
             });
         </script>
+
 
         <section
             class="relative isolate overflow-hidden bg-black text-white py-16 flex flex-col items-center justify-center"
