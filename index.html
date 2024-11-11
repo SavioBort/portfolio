@@ -132,7 +132,6 @@
         </h2>
         <div class="mx-auto max-w-7xl px-6 lg:px-8 relative mt-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
                 <!-- Outros cards -->
                 <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
                     class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
@@ -183,17 +182,11 @@
         <!-- Modal para exibir a imagem -->
         <div
             class="modal hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
-            <div class="modal-content relative max-w-full max-h-full flex justify-center items-center">
-                <button class="arrow-left absolute left-4 top-1/2 transform -translate-y-1/2">
-                    &#10094; <!-- Ícone de seta para esquerda -->
-                </button>
-                <div class="modal-image-wrapper relative">
-                    <img src="" alt="Imagem Modal" class="modal-image max-w-[60vw] max-h-[60vh] border-4 border-white">
-                </div>
-                <button class="arrow-right absolute right-4 top-1/2 transform -translate-y-1/2">
-                    &#10095; <!-- Ícone de seta para direita -->
-                </button>
-
+            <div class="modal-content relative max-w-[60vw] max-h-[60vh] flex justify-center items-center">
+                <button id="prevImage" class="nav-button left-0">Anterior</button>
+                <img src="" alt="Imagem Modal"
+                    class="modal-image max-w-[60vw] max-h-[60vh] border-4 border-white rounded-lg">
+                <button id="nextImage" class="nav-button right-0">Próxima</button>
             </div>
         </div>
 
@@ -206,12 +199,11 @@
                 "https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
             ];
 
-            // Encontrar o card especial que irá abrir a imagem no modal
-            const specialCard = document.querySelector('.project-card[data-image]');  // O card que tem a funcionalidade especial
+            const specialCard = document.querySelector('.project-card[data-image]');
             const modal = document.querySelector('.modal');
             const modalImage = document.querySelector('.modal-image');
-            const arrowLeft = document.querySelector('.arrow-left');
-            const arrowRight = document.querySelector('.arrow-right');
+            const prevButton = document.getElementById('prevImage');
+            const nextButton = document.getElementById('nextImage');
 
             // Variável para rastrear a imagem atual
             let currentImageIndex = 0;
@@ -231,18 +223,70 @@
                 }
             });
 
-            // Navegar para a próxima imagem ao clicar na seta direita
-            arrowRight.addEventListener('click', function () {
+            // Navegar para a próxima imagem ao clicar no botão "Próxima"
+            nextButton.addEventListener('click', function () {
                 currentImageIndex = (currentImageIndex + 1) % images.length; // Avança para a próxima imagem
                 modalImage.src = images[currentImageIndex];  // Atualiza a imagem
             });
 
-            // Navegar para a imagem anterior ao clicar na seta esquerda
-            arrowLeft.addEventListener('click', function () {
+            // Navegar para a imagem anterior ao clicar no botão "Anterior"
+            prevButton.addEventListener('click', function () {
                 currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Retrocede para a imagem anterior
                 modalImage.src = images[currentImageIndex];  // Atualiza a imagem
             });
         </script>
+
+        <style>
+            .modal {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgba(0, 0, 0, 0.8);
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1000;
+            }
+
+            .modal-content {
+                position: relative;
+            }
+
+            .nav-button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 5px;
+                z-index: 10;
+            }
+
+            #prevImage {
+                left: 10px;
+            }
+
+            #nextImage {
+                right: 10px;
+            }
+
+            .modal-image {
+                max-width: 80vw;
+                max-height: 80vh;
+                border: 4px solid white;
+                border-radius: 10px;
+            }
+
+            .modal.hidden {
+                display: none;
+            }
+        </style>
 
 
         <section
