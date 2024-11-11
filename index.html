@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="https://avatars.githubusercontent.com/u/118234357?v=4" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inclua o CSS do Lightbox -->
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <!-- Inclua o JavaScript do Lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -146,55 +148,21 @@
                         <p class="project-description">Projeto Futuro Militar</p>
                     </div>
                 </a>
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7217368548698910721/" target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/node.PNG" alt="Automação de impressoras"
-                        class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Node Red</h3>
-                        <p class="project-description">Automação de impressoras</p>
-                    </div>
+                <a href="https://www.linkedin.com/feed/" target="_blank" class="block rounded-lg shadow-md hover:bg-gray-700">
+                    <img src="https://source.unsplash.com/IXY9Eri2t2U/500x300" alt="Project 2"
+                        class="object-cover w-full rounded-lg h-72">
                 </a>
-                <a href="https://yureribeiro.saviobortoline.com/" target="_blank" rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/empreedimentos.PNG" alt="Corretora" class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Website</h3>
-                        <p class="project-description">Empreendimentos Imobiliários</p>
-                    </div>
+                <a href="https://www.linkedin.com/feed/" target="_blank"
+                    class="block rounded-lg shadow-md hover:bg-gray-700">
+                    <img src="https://source.unsplash.com/IXY9Eri2t2U/500x300" alt="Project 3"
+                        class="object-cover w-full rounded-lg h-72">
                 </a>
-                <a href="./src/MovieApp_large1.jpeg" data-lightbox="movieapp-gallery"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/MovieApp.jpeg" alt="MovieApp" class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Aplicativo React Native</h3>
-                        <p class="project-description">MovieApp</p>
-                    </div>
-                </a>
-
-                <!-- Imagens adicionais na galeria -->
-                <a href="./src/MovieApp.jpeg" data-lightbox="movieapp-gallery" style="display: none;"></a>
-                <a href="./src/MovieApp.jpeg" data-lightbox="movieapp-gallery" style="display: none;"></a>
-
             </div>
         </div>
     </section>
-    <section
-        class="relative isolate overflow-hidden bg-black text-white py-16 flex flex-col items-center justify-center"
-        id="contact">
-        <h1
-            class="absolute top-5 left-1/2 transform -translate-x-1/2 text-xl font-semibold tracking-tight mb-2 text-green-500">
-            Contato
-        </h1>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">
-            Entre em contato
-        </h2>
-        <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-4xl" id="contactForm">
-            <input type="hidden" name="access_key" value="595e7157-c115-4632-b9dd-0738aaa9beae">
+    <section class="bg-gray-900 text-white py-24" id="contact">
+        <h1 class="text-4xl font-semibold text-center">Entre em contato</h1>
+        <form class="max-w-xl mx-auto mt-8" method="POST" action="enviar_mensagem.php">
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="nome" class="block text-sm font-bold mb-2">Nome</label>
@@ -212,58 +180,34 @@
             <div class="flex flex-wrap mb-6">
                 <div class="w-full px-3">
                     <label for="mensagem" class="block text-sm font-bold mb-2">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="8" required
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua mensagem" required
                         class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"></textarea>
                 </div>
             </div>
-            <div class="flex flex-wrap mb-6">
-                <div class="w-full px-3">
-                    <label id="captchaQuestion" for="captcha" class="block text-sm font-bold mb-2"></label>
-                    <input id="captcha" type="text" name="captcha" placeholder="Digite sua resposta" required
-                        class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
-                </div>
-            </div>
-            <div class="flex items-center justify-center">
+            <div class="flex justify-center">
                 <button type="submit"
-                    class="inline-block px-6 py-2 text-base font-semibold text-white bg-green-700 rounded-full hover:bg-green-600">
-                    Enviar mensagem
+                    class="bg-green-700 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                    Enviar Mensagem
                 </button>
             </div>
         </form>
-
-        <script>
-            const questions = [
-                { question: "Quanto é 2 + 2?", answer: "4" },
-                { question: "Quanto é 3 + 5?", answer: "8" },
-                { question: "Quanto é 7 - 3?", answer: "4" },
-                { question: "Quanto é 6 + 1?", answer: "7" },
-                { question: "Quanto é 10 - 2?", answer: "8" },
-                { question: "Quanto é 4 + 4?", answer: "8" },
-                { question: "Quanto é 5 - 1?", answer: "4" },
-                { question: "Quanto é 1 + 1?", answer: "2" },
-                { question: "Quanto é 8 - 5?", answer: "3" },
-                { question: "Quanto é 9 - 7?", answer: "2" }
-            ];
-            const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-            document.getElementById('captchaQuestion').innerText = randomQuestion.question;
-            document.getElementById('contactForm').addEventListener('submit', function (event) {
-                const captchaValue = document.getElementById('captcha').value;
-                if (captchaValue !== randomQuestion.answer) {
-                    event.preventDefault();
-                    alert('Por favor, responda corretamente à pergunta de verificação.');
-                }
-            });
-        </script>
-
     </section>
-    <footer class="bg-green-700 text-center py-2 animate-gradient">
-        <p class="text-sm text-white">© Sávio Bortoline 2024 - Todos os direitos reservados.</p>
+
+    <footer class="bg-gray-900 text-white py-6 text-center">
+        <p>&copy; 2024 Sávio Bortoline. Todos os direitos reservados.</p>
+        <div class="flex justify-center mt-4">
+            <a href="https://github.com/SavioBort" target="_blank" class="text-gray-400 hover:text-green-500 mx-4">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/saviobortoline" target="_blank" class="text-gray-400 hover:text-green-500 mx-4">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="mailto:bortoline.25@gmail.com" class="text-gray-400 hover:text-green-500 mx-4">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+        </div>
     </footer>
-    <a href="https://api.whatsapp.com/send/?phone=35988545668&text&type=phone_number&app_absent=0" target="_blank"
-        class="fixed right-4 bottom-5 z-50 bg-green-800 hover:bg-green-500 text-white p-4 rounded-full shadow-md transition duration-300 flex items-center justify-center"
-        style="width: 35px; height: 35px;">
-        <i class="fab fa-whatsapp text-xl"></i>
-    </a>
+
 </body>
 
 </html>
