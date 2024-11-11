@@ -132,58 +132,71 @@
         </h2>
         <div class="mx-auto max-w-7xl px-6 lg:px-8 relative mt-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        
+
                 <!-- Outros cards -->
-                <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png" alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image" style="width: 300px; height: 200px; object-fit: contain;">
+                <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
+                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
+                    <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
+                        alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image"
+                        style="width: 300px; height: 200px; object-fit: contain;">
                     <div class="project-content">
                         <h3 class="project-title">Website</h3>
                         <p class="project-description">Projeto Futuro Militar</p>
                     </div>
                 </a>
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7217368548698910721/" target="_blank" rel="noopener noreferrer" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/node.PNG" alt="Automação de impressoras" class="mx-auto mb-4 rounded-lg project-image" style="width: 300px; height: 200px; object-fit: contain;">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7217368548698910721/" target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
+                    <img src="./src/node.PNG" alt="Automação de impressoras"
+                        class="mx-auto mb-4 rounded-lg project-image"
+                        style="width: 300px; height: 200px; object-fit: contain;">
                     <div class="project-content">
                         <h3 class="project-title">Node Red</h3>
                         <p class="project-description">Automação de impressoras</p>
                     </div>
                 </a>
-                <a href="https://yureribeiro.saviobortoline.com/" target="_blank" rel="noopener noreferrer" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/empreedimentos.PNG" alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image" style="width: 300px; height: 200px; object-fit: contain;">
+                <a href="https://yureribeiro.saviobortoline.com/" target="_blank" rel="noopener noreferrer"
+                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
+                    <img src="./src/empreedimentos.PNG" alt="Projeto Futuro Militar"
+                        class="mx-auto mb-4 rounded-lg project-image"
+                        style="width: 300px; height: 200px; object-fit: contain;">
                     <div class="project-content">
                         <h3 class="project-title">Website</h3>
                         <p class="project-description">Empreendimentos Imobiliários</p>
                     </div>
                 </a>
-        
+
                 <!-- Último Card que abre a imagem no modal -->
-                <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative" data-image="./src/empreedimentos.PNG">
-                    <img src="./src/MovieApp.jpeg" alt="Projeto Imagem" class="mx-auto mb-4 rounded-lg project-image" style="width: 300px; height: 200px; object-fit: contain;">
+                <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
+                    data-image="./src/empreedimentos.PNG">
+                    <img src="./src/MovieApp.jpeg" alt="Projeto Imagem" class="mx-auto mb-4 rounded-lg project-image"
+                        style="width: 300px; height: 200px; object-fit: contain;">
                     <div class="project-content">
                         <h3 class="project-title">Galeria de Imagens</h3>
                         <p class="project-description">Clique para ver as imagens em tamanho grande</p>
                     </div>
                 </a>
-        
+
             </div>
         </div>
-        
+
         <!-- Modal para exibir a imagem -->
-        <div class="modal hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
+        <div
+            class="modal hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
             <div class="modal-content relative max-w-full max-h-full flex justify-center items-center">
-                <!-- Setas de navegação fora da imagem -->
-                <button class="arrow-left absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full z-10">
-                    &#10094;
+                <button class="arrow-left absolute left-4 top-1/2 transform -translate-y-1/2">
+                    &#10094; <!-- Ícone de seta para esquerda -->
                 </button>
                 <div class="modal-image-wrapper relative">
                     <img src="" alt="Imagem Modal" class="modal-image max-w-[60vw] max-h-[60vh] border-4 border-white">
                 </div>
-                <button class="arrow-right absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full z-10">
-                    &#10095;
+                <button class="arrow-right absolute right-4 top-1/2 transform -translate-y-1/2">
+                    &#10095; <!-- Ícone de seta para direita -->
                 </button>
+
             </div>
         </div>
-        
+
         <script>
             // Imagens para o modal
             const images = [
@@ -192,17 +205,17 @@
                 "./src/node.PNG", // Mais imagens para o modal
                 "https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
             ];
-        
+
             // Encontrar o card especial que irá abrir a imagem no modal
             const specialCard = document.querySelector('.project-card[data-image]');  // O card que tem a funcionalidade especial
             const modal = document.querySelector('.modal');
             const modalImage = document.querySelector('.modal-image');
             const arrowLeft = document.querySelector('.arrow-left');
             const arrowRight = document.querySelector('.arrow-right');
-        
+
             // Variável para rastrear a imagem atual
             let currentImageIndex = 0;
-        
+
             // Evento de clique no card que irá abrir a imagem no modal
             specialCard.addEventListener('click', function (event) {
                 event.preventDefault();  // Impede o link de abrir outra página
@@ -210,27 +223,27 @@
                 modalImage.src = imageUrl;  // Define a imagem no modal
                 modal.classList.remove('hidden');  // Exibe o modal
             });
-        
+
             // Fechar o modal ao clicar fora da imagem (área preta)
             modal.addEventListener('click', function (event) {
                 if (event.target === modal) {
                     modal.classList.add('hidden');  // Esconde o modal
                 }
             });
-        
+
             // Navegar para a próxima imagem ao clicar na seta direita
             arrowRight.addEventListener('click', function () {
                 currentImageIndex = (currentImageIndex + 1) % images.length; // Avança para a próxima imagem
                 modalImage.src = images[currentImageIndex];  // Atualiza a imagem
             });
-        
+
             // Navegar para a imagem anterior ao clicar na seta esquerda
             arrowLeft.addEventListener('click', function () {
                 currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Retrocede para a imagem anterior
                 modalImage.src = images[currentImageIndex];  // Atualiza a imagem
             });
         </script>
-        
+
 
         <section
             class="relative isolate overflow-hidden bg-black text-white py-16 flex flex-col items-center justify-center"
