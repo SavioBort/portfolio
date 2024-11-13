@@ -176,6 +176,18 @@
                     </div>
                 </a>
 
+                <!-- Último Card que abre a imagem no modal -->
+                <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
+                    data-image="./src/MovieApp.jpeg">
+                    <!-- Conteúdo do Card -->
+                    <div class="project-content relative z-10 text-white">
+                        <h3 class="project-title">React Native</h3>
+                        <p class="project-description">Aplicativo Filmes e Séries</p>
+                    </div>
+                    <!-- Overlay para desfoque -->
+                    <div class="overlay"></div>
+                </a>
+
             </div>
         </div>
 
@@ -292,6 +304,41 @@
                     font-size: 20px;
                     /* Aumenta a fonte para facilitar a leitura */
                 }
+            }
+
+            .project-card {
+                position: relative;
+                width: 300px;
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                background-image: url('./src/MovieApp.jpeg');
+                /* Definindo a imagem como fundo */
+                background-size: cover;
+                background-position: center;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                /* Fundo semi-transparente para escurecer */
+                backdrop-filter: blur(70px);
+                /* Aplicando o efeito de desfoque */
+                z-index: 5;
+            }
+
+            .project-content {
+                position: relative;
+                z-index: 10;
+                text-align: center;
             }
         </style>
 
