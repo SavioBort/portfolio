@@ -16,6 +16,7 @@
             const openIcon = button.querySelector('svg:first-child');
             const closeIcon = button.querySelector('svg:last-child');
 
+            // Função para abrir ou fechar o menu
             function toggleMenu() {
                 const isExpanded = button.getAttribute('aria-expanded') === 'true';
                 button.setAttribute('aria-expanded', !isExpanded);
@@ -24,8 +25,10 @@
                 closeIcon.classList.toggle('hidden', isExpanded);
             }
 
+            // Adiciona evento de clique ao botão
             button.addEventListener('click', toggleMenu);
 
+            // Fecha o menu ao clicar fora
             document.addEventListener('click', function (event) {
                 if (!menu.contains(event.target) && !button.contains(event.target)) {
                     if (!menu.classList.contains('hidden')) {
@@ -129,6 +132,7 @@
         </h2>
         <div class="mx-auto max-w-7xl px-6 lg:px-8 relative mt-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Outros cards -->
                 <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
                     class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
                     <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
@@ -146,13 +150,234 @@
                         class="mx-auto mb-4 rounded-lg project-image"
                         style="width: 300px; height: 200px; object-fit: contain;">
                     <div class="project-content">
-                        <h3 class="project-title">Automação de impressoras</h3>
-                        <p class="project-description">Node-Red</p>
+                        <h3 class="project-title">Node Red</h3>
+                        <p class="project-description">Automação de impressoras</p>
                     </div>
                 </a>
+                <a href="https://yureribeiro.saviobortoline.com/" target="_blank" rel="noopener noreferrer"
+                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
+                    <img src="./src/empreedimentos.PNG" alt="Projeto Futuro Militar"
+                        class="mx-auto mb-4 rounded-lg project-image"
+                        style="width: 300px; height: 200px; object-fit: contain;">
+                    <div class="project-content">
+                        <h3 class="project-title">Website</h3>
+                        <p class="project-description">Empreendimentos Imobiliários</p>
+                    </div>
+                </a>
+
+                <!-- Último Card que abre a imagem no modal -->
+                <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
+                    data-image="./src/MovieApp.jpeg">
+                    <img src="./src/MovieApp.jpeg" alt="Projeto Imagem" class="mx-auto mb-4 rounded-lg project-image"
+                        style="width: 300px; height: 200px; object-fit: contain;">
+                    <div class="project-content">
+                        <h3 class="project-title">React Native</h3>
+                        <p class="project-description">Aplicativo Filmes e Séries</p>
+                    </div>
+                </a>
+
             </div>
         </div>
+
+        <!-- Modal para exibir a imagem -->
+        <div
+            class="modal hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 z-50 flex justify-center items-center">
+            <div class="modal-content relative max-w-[90vw] max-h-[90vh] flex items-center">
+                <!-- Botão de "Anterior" com ícone de seta esquerda, posicionado fora da imagem -->
+                <button id="prevImage"
+                    class="nav-button absolute -left-12 text-white text-4xl opacity-50 hover:opacity-100">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <!-- Imagem do modal -->
+                <img src="" alt="Imagem Modal"
+                    class="modal-image max-w-[80vw] max-h-[80vh] border-4 border-white rounded-lg">
+
+                <!-- Botão de "Próxima" com ícone de seta direita, posicionado fora da imagem -->
+                <button id="nextImage"
+                    class="nav-button absolute -right-12 text-white text-4xl opacity-50 hover:opacity-100">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+
+
+        <script>
+            // Imagens para o modal
+
+            const images = [
+                "./src/MovieAppFilme.png",
+                "./src/MovieAppFilmeDescricao.png", // Mais imagens para o modal
+                "./src/MovieAppSeries.jpeg",
+                "./src/MovieAppSelecione.jpeg",
+                "./src/MovieAppDrawer.png",
+
+            ];
+
+            const specialCard = document.querySelector('.project-card[data-image]');
+            const modal = document.querySelector('.modal');
+            const modalImage = document.querySelector('.modal-image');
+            const prevButton = document.getElementById('prevImage');
+            const nextButton = document.getElementById('nextImage');
+
+            // Variável para rastrear a imagem atual
+            let currentImageIndex = 0;
+
+            // Evento de clique no card que irá abrir a imagem no modal
+            specialCard.addEventListener('click', function (event) {
+                event.preventDefault();  // Impede o link de abrir outra página
+                const imageUrl = specialCard.getAttribute('data-image');  // Pega a URL da imagem
+                modalImage.src = imageUrl;  // Define a imagem no modal
+                modal.classList.remove('hidden');  // Exibe o modal
+            });
+
+            // Fechar o modal ao clicar fora da imagem (área preta)
+            modal.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');  // Esconde o modal
+                }
+            });
+
+            // Navegar para a próxima imagem ao clicar no botão "Próxima"
+            nextButton.addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % images.length; // Avança para a próxima imagem
+                modalImage.src = images[currentImageIndex];  // Atualiza a imagem
+            });
+
+            // Navegar para a imagem anterior ao clicar no botão "Anterior"
+            prevButton.addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Retrocede para a imagem anterior
+                modalImage.src = images[currentImageIndex];  // Atualiza a imagem
+            });
+        </script>
+
+        <style>
+            .nav-button {
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                transition: opacity 0.2s ease;
+            }
+
+            /* Ícone sem interferir no clique */
+            .nav-button i {
+                pointer-events: none;
+            }
+
+            /* Efeito de hover */
+            .nav-button:hover {
+                opacity: 1;
+            }
+
+            /* Posição dos botões fora da imagem */
+            .modal-content {
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+
+            .modal-image {
+                display: block;
+                margin: auto;
+                border: 4px solid white;
+                border-radius: 8px;
+            }
+
+            /* Responsividade para dispositivos móveis muito pequenos */
+            @media (max-width: 480px) {
+                .nav-button {
+                    padding: 12px 16px;
+                    /* Aumenta o tamanho do botão para facilitar o clique */
+                    font-size: 20px;
+                    /* Aumenta a fonte para facilitar a leitura */
+                }
+            }
+        </style>
+
+
     </section>
+    <section
+        class="relative isolate overflow-hidden bg-black text-white py-16 flex flex-col items-center justify-center"
+        id="contact">
+        <h1
+            class="absolute top-5 left-1/2 transform -translate-x-1/2 text-xl font-semibold tracking-tight mb-2 text-green-500">
+            Contato
+        </h1>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-white">
+            Entre em contato
+        </h2>
+        <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-4xl" id="contactForm">
+            <input type="hidden" name="access_key" value="595e7157-c115-4632-b9dd-0738aaa9beae">
+            <div class="flex flex-wrap mb-6">
+                <div class="w-full px-3">
+                    <label for="nome" class="block text-sm font-bold mb-2">Nome</label>
+                    <input id="nome" type="text" name="nome" placeholder="Seu nome" required
+                        class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
+                </div>
+            </div>
+            <div class="flex flex-wrap mb-6">
+                <div class="w-full px-3">
+                    <label for="email" class="block text-sm font-bold mb-2">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="Seu e-mail" required
+                        class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
+                </div>
+            </div>
+            <div class="flex flex-wrap mb-6">
+                <div class="w-full px-3">
+                    <label for="mensagem" class="block text-sm font-bold mb-2">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="8" required
+                        class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"></textarea>
+                </div>
+            </div>
+            <div class="flex flex-wrap mb-6">
+                <div class="w-full px-3">
+                    <label id="captchaQuestion" for="captcha" class="block text-sm font-bold mb-2"></label>
+                    <input id="captcha" type="text" name="captcha" placeholder="Digite sua resposta" required
+                        class="appearance-none block w-full bg-gray-800 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700">
+                </div>
+            </div>
+            <div class="flex items-center justify-center">
+                <button type="submit"
+                    class="inline-block px-6 py-2 text-base font-semibold text-white bg-green-700 rounded-full hover:bg-green-600">
+                    Enviar mensagem
+                </button>
+            </div>
+        </form>
+
+        <script>
+            const questions = [
+                { question: "Quanto é 2 + 2?", answer: "4" },
+                { question: "Quanto é 3 + 5?", answer: "8" },
+                { question: "Quanto é 7 - 3?", answer: "4" },
+                { question: "Quanto é 6 + 1?", answer: "7" },
+                { question: "Quanto é 10 - 2?", answer: "8" },
+                { question: "Quanto é 4 + 4?", answer: "8" },
+                { question: "Quanto é 5 - 1?", answer: "4" },
+                { question: "Quanto é 1 + 1?", answer: "2" },
+                { question: "Quanto é 8 - 5?", answer: "3" },
+                { question: "Quanto é 9 - 7?", answer: "2" }
+            ];
+            const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+            document.getElementById('captchaQuestion').innerText = randomQuestion.question;
+            document.getElementById('contactForm').addEventListener('submit', function (event) {
+                const captchaValue = document.getElementById('captcha').value;
+                if (captchaValue !== randomQuestion.answer) {
+                    event.preventDefault();
+                    alert('Por favor, responda corretamente à pergunta de verificação.');
+                }
+            });
+        </script>
+
+    </section>
+    <footer class="bg-green-700 text-center py-2 animate-gradient">
+        <p class="text-sm text-white">© Sávio Bortoline 2024 - Todos os direitos reservados.</p>
+    </footer>
+    <a href="https://api.whatsapp.com/send/?phone=35988545668&text&type=phone_number&app_absent=0" target="_blank"
+        class="fixed right-4 bottom-5 z-50 bg-green-800 hover:bg-green-500 text-white p-4 rounded-full shadow-md transition duration-300 flex items-center justify-center"
+        style="width: 35px; height: 35px;">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </a>
 </body>
 
 </html>
