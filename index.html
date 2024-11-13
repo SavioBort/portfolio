@@ -168,20 +168,13 @@
                 <!-- Último Card que abre a imagem no modal -->
                 <a href="#" class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
                     data-image="./src/MovieApp.jpeg">
-                    <!-- Imagem desfocada no fundo -->
-                    <div class="blur-background" style="background-image: url('./src/MovieApp.jpeg');"></div>
-
-                    <!-- Imagem principal sem desfoque -->
-                    <img src="./src/MovieApp.jpeg" alt="Projeto Imagem"
-                        class="main-image mx-auto mb-4 rounded-lg project-image">
-
-                    <!-- Conteúdo do Card -->
+                    <img src="./src/MovieApp.jpeg" alt="Projeto Imagem" class="mx-auto mb-4 rounded-lg project-image"
+                        style="width: 300px; height: 200px; object-fit: contain;">
                     <div class="project-content">
                         <h3 class="project-title">React Native</h3>
                         <p class="project-description">Aplicativo Filmes e Séries</p>
                     </div>
                 </a>
-
 
             </div>
         </div>
@@ -299,52 +292,6 @@
                     font-size: 20px;
                     /* Aumenta a fonte para facilitar a leitura */
                 }
-            }
-
-            .project-card {
-                position: relative;
-                width: 300px;
-                height: 200px;
-                border-radius: 8px;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            /* Imagem de fundo desfocada */
-            .blur-background {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                background-position: center;
-                filter: blur(70px);
-                /* Aplicando o desfoque */
-                z-index: 1;
-                /* Colocando o fundo atrás da imagem principal */
-            }
-
-            /* Imagem principal */
-            .main-image {
-                position: relative;
-                z-index: 2;
-                /* Colocando a imagem principal acima do fundo desfocado */
-                width: 80%;
-                /* Ajuste para tamanho desejado */
-                border-radius: 8px;
-                object-fit: contain;
-            }
-
-            /* Conteúdo do card */
-            .project-content {
-                position: relative;
-                z-index: 3;
-                text-align: center;
-                color: white;
-                margin-top: 10px;
             }
         </style>
 
