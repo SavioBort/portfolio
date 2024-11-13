@@ -300,6 +300,52 @@
                     /* Aumenta a fonte para facilitar a leitura */
                 }
             }
+
+            .project-card {
+                position: relative;
+                width: 300px;
+                height: 200px;
+                border-radius: 8px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Imagem de fundo desfocada */
+            .blur-background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                filter: blur(70px);
+                /* Aplicando o desfoque */
+                z-index: 1;
+                /* Colocando o fundo atrás da imagem principal */
+            }
+
+            /* Imagem principal */
+            .main-image {
+                position: relative;
+                z-index: 2;
+                /* Colocando a imagem principal acima do fundo desfocado */
+                width: 80%;
+                /* Ajuste para tamanho desejado */
+                border-radius: 8px;
+                object-fit: contain;
+            }
+
+            /* Conteúdo do card */
+            .project-content {
+                position: relative;
+                z-index: 3;
+                text-align: center;
+                color: white;
+                margin-top: 10px;
+            }
         </style>
 
 
