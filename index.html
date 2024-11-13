@@ -318,14 +318,20 @@
                 }
             }
 
-            .project-description {
-                display: none;
+            /* Para telas maiores (computador) */
+            .project-card .project-description {
+                opacity: 0;
+                transition: opacity 0.3s;
             }
 
-            /* Exibir a mensagem apenas em telas de dispositivos móveis */
+            .project-card:hover .project-description {
+                opacity: 1;
+            }
+
+            /* Para dispositivos móveis, o texto será visível por padrão */
             @media (max-width: 767px) {
-                .project-description.mobile-only {
-                    display: block;
+                .project-card .project-description {
+                    opacity: 1;
                 }
             }
         </style>
