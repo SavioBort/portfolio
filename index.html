@@ -186,9 +186,12 @@
                         style="width: 300px; height: 200px; object-fit: contain;">
                     <div class="project-content">
                         <h3 class="project-title">React Native</h3>
-                        <p class="project-description">Veja meu projeto desenvolvido em React Native no LinkedIn!</p>
+                        <!-- Aplique uma classe para a descrição visível somente em dispositivos móveis -->
+                        <p class="project-description mobile-only">Veja meu projeto desenvolvido em React Native no
+                            LinkedIn!</p>
                     </div>
                 </a>
+
 
             </div>
         </div>
@@ -312,6 +315,17 @@
 
                 b {
                     font-size: 16px;
+                }
+            }
+
+            .project-description {
+                display: none;
+            }
+
+            /* Exibir a mensagem apenas em telas de dispositivos móveis */
+            @media (max-width: 767px) {
+                .project-description.mobile-only {
+                    display: block;
                 }
             }
         </style>
