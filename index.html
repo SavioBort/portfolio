@@ -188,8 +188,6 @@
                     </div>
                 </a>
 
-
-
             </div>
         </div>
 
@@ -243,21 +241,20 @@
                 }
             }
 
-            /* Para telas maiores (computador) */
+            /* Para telas maiores (computador), o texto só aparece no hover */
             .project-card .project-description {
-                opacity: 0;
-                transition: opacity 0.3s;
+                display: none;
             }
 
+            /* Ao passar o mouse (hover), exibe o texto */
             .project-card:hover .project-description {
-                opacity: 1;
+                display: block;
             }
 
-            /* Para dispositivos móveis, o texto estará visível por padrão */
+            /* Para dispositivos móveis, o texto será sempre exibido */
             @media (max-width: 767px) {
                 .project-card .project-description {
-                    opacity: 1;
-                    /* Texto visível sem precisar interagir */
+                    display: block;
                 }
             }
         </style>
