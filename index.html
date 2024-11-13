@@ -282,14 +282,20 @@
 
             /* Estilos para os botões de navegação */
             .nav-button {
-                background-color: rgba(0, 0, 0, 0.7);
-                color: white;
-                padding: 10px 20px;
+                background: transparent;
                 border: none;
                 cursor: pointer;
-                font-size: 16px;
-                border-radius: 5px;
-                z-index: 10;
+                transition: opacity 0.2s ease;
+            }
+
+            .nav-button i {
+                pointer-events: none;
+                /* Ícone não interfere no clique */
+            }
+
+            /* Efeito de hover */
+            .nav-button:hover {
+                opacity: 1;
             }
 
             /* Estilos para a imagem do modal */
