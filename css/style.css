@@ -29,10 +29,10 @@
 }
 
 .project-card {
-    border: 1px solid rgba(96, 71, 238, 0.603);
+    border: 1px solid rgba(62, 121, 211, 0.493);
     transition: border-color 0.3s ease;
     border-radius: 25%;
-    overflow: hidden;
+    
     position: relative;
 }
 
