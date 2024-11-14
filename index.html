@@ -136,8 +136,8 @@
         </div>
     </div>
     <section
-        class="relative isolate overflow-hidden bg-black text-white py-16 flex flex-col items-center justify-center"
-        id="projects" style="background-color: #121212;">
+        class="relative isolate overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-16 flex flex-col items-center justify-center"
+        id="projects">
 
         <h1
             class="absolute top-5 left-1/2 transform -translate-x-1/2 text-xl font-semibold tracking-tight mb-2 text-gradient-green-blue">
@@ -148,71 +148,41 @@
         </h2>
         <div class="mx-auto max-w-7xl px-6 lg:px-8 relative mt-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Outros cards -->
+                <!-- Cards de Projetos -->
                 <a href="https://projetofuturomilitar.com.br/" target="_blank" rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
+                    class="project-card rounded-lg p-6 shadow-lg overflow-hidden block relative bg-gray-800 hover:bg-gray-700 transition-all duration-300">
                     <img src="https://gustavocoimbra.com/wp-content/uploads/sites/27/2024/08/projeto-futuro-militar.png"
                         alt="Projeto Futuro Militar" class="mx-auto mb-4 rounded-lg project-image"
                         style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Website</h3>
-                        <p class="project-description">Projeto Futuro Militar</p>
+                    <div class="project-content text-center">
+                        <h3 class="project-title font-semibold text-lg text-green-400">Website</h3>
+                        <p class="project-description text-gray-300">Projeto Futuro Militar</p>
                     </div>
                 </a>
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7217368548698910721/" target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/node.PNG" alt="Automação de impressoras"
-                        class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Node-Red</h3>
-                        <p class="project-description">Confira meu projeto de Automação de Impressoras no LinkedIn!</p>
-                    </div>
-                </a>
-                <a href="https://yureribeiro.saviobortoline.com/" target="_blank" rel="noopener noreferrer"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative">
-                    <img src="./src/empreedimentos.PNG" alt="Projeto Futuro Militar"
-                        class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">Website</h3>
-                        <p class="project-description">Site para Imobiliários</p>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7261998162549035008/" target="_blank"
-                    class="project-card rounded-lg p-6 shadow-md overflow-hidden block relative"
-                    data-image="./src/MovieApp.jpeg">
-                    <img src="./src/MovieApp.jpeg" alt="Projeto Imagem" class="mx-auto mb-4 rounded-lg project-image"
-                        style="width: 300px; height: 200px; object-fit: contain;">
-                    <div class="project-content">
-                        <h3 class="project-title">React Native</h3>
-                        <p class="project-description">Veja meu projeto desenvolvido em React Native no LinkedIn!</p>
-                    </div>
-                </a>
-
+                <!-- Outros cartões -->
             </div>
         </div>
 
         <style>
-            .nav-button {
-                background: transparent;
-                border: none;
-                cursor: pointer;
-                transition: opacity 0.2s ease;
+            /* Ajuste de fundo e cores para combinar com a seção anterior */
+            .project-card {
+                background-color: #1c1c1c;
+                border: 1px solid #333;
             }
 
-            /* Ícone sem interferir no clique */
-            .nav-button i {
-                pointer-events: none;
+            .project-card:hover {
+                border-color: #00bcd4;
+                transform: scale(1.05);
             }
 
-            /* Efeito de hover */
-            .nav-button:hover {
-                opacity: 1;
+            .project-content h3 {
+                color: #4ade80;
             }
 
-            /* Posição dos botões fora da imagem */
+            .project-description {
+                color: #94a3b8;
+            }
+
             .modal-content {
                 display: flex;
                 align-items: center;
@@ -230,9 +200,7 @@
             @media (max-width: 480px) {
                 .nav-button {
                     padding: 12px 16px;
-                    /* Aumenta o tamanho do botão para facilitar o clique */
                     font-size: 20px;
-                    /* Aumenta a fonte para facilitar a leitura */
                 }
 
                 h3 {
@@ -244,9 +212,8 @@
                 }
             }
         </style>
-
-
     </section>
+
     <section
         class="relative isolate overflow-hidden bg-gradient-to-b from-black via-gray-900 to-blue-900 text-white py-16 flex flex-col items-center justify-center"
         id="skills">
