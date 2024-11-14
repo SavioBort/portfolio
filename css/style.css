@@ -30,7 +30,7 @@
 
 .project-card {
     border: 2px solid rgba(23, 65, 94, 0.616);
-    transition: border-color 0.3s ease;    
+    transition: border-color 0.3s ease;
     position: relative;
 }
 
@@ -109,5 +109,40 @@
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+/* Ícone sem interferir no clique */
+.nav-button i {
+    pointer-events: none;
+}
+
+/* Efeito de hover */
+.nav-button:hover {
+    opacity: 1;
+}
+
+/* Responsividade para dispositivos móveis muito pequenos */
+@media (max-width: 480px) {
+    .nav-button {
+        padding: 12px 16px;
+        /* Aumenta o tamanho do botão para facilitar o clique */
+        font-size: 20px;
+        /* Aumenta a fonte para facilitar a leitura */
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    b {
+        font-size: 16px;
     }
 }
