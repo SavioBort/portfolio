@@ -29,7 +29,7 @@
 }
 
 .project-card {
-    border: 2px solid rgba(113, 154, 216, 0.171);
+    border: 2px solid rgba(23, 65, 94, 0.616);
     transition: border-color 0.3s ease;    
     position: relative;
 }
