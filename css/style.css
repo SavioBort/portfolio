@@ -29,13 +29,13 @@
 }
 
 .project-card {
-    border: 1px solid rgba(62, 122, 211, 0.185);
+    border: 1px solid rgba(113, 154, 216, 0.171);
     transition: border-color 0.3s ease;    
     position: relative;
 }
 
 .project-card:hover {
-    border-color: #22c55e;
+    border-color: #288149;
 }
 
 .project-image {
