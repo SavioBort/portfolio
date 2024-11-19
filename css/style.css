@@ -1,6 +1,7 @@
 .bg-black {
     position: relative;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSreJE8cHnwPxM7zjLa_kGMmMf4O8XkbWlXUQ&s');
+    /*background-image: url('https://i.pinimg.com/736x/6c/dc/a3/6cdca3e3f2fd50c05d9ef0df7193d56f.jpg');*/
+    background-color: '#121212';
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
