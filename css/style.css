@@ -1,8 +1,7 @@
 .bg-black {
     position: relative;
-    /*background-image: url('https://i.pinimg.com/736x/6c/dc/a3/6cdca3e3f2fd50c05d9ef0df7193d56f.jpg');*/
+    background-image: url('https://wallpapers.com/images/featured/cor-simples-hd-bqcq17kcrpnzxq8q.jpg');
     background-size: cover;
-    background-color: rgba(145, 224, 17, 0.9);
     background-attachment: fixed;
     background-position: center;
 }
